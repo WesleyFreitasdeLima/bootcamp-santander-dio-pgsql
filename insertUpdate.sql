@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS teste (
+	cpf VARCHAR(11) NOT NULL,
+	nome VARCHAR(50) NOT NULL,
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY(cpf)
+);
+
+INSERT INTO teste (cpf, nome) 
+VALUES ('40651976863', 'Wesley Lima') 
+ON CONFLICT (cpf) DO NOTHING;
+
+UPDATE teste 
+SET nome = 'Wsley Freitas de Lima' 
+WHERE cpf = '40651976863';
